@@ -11,7 +11,7 @@ An opinionated, rapid web prototyping stack maintained by the team at NPR.
 - **custom components:** A collection of custom components for your copy/paste pleasure.
 
 ## Assumptions
-- You're on OSX.
+- You're on OSX. This one should be pretty easy to determine.. you're off to a great start!
 - You have the Xcode command line tools installed. Not sure? Run gcc -v and you'll be prompted to install if you don't have it already.
 - You have Ruby installed. It should come with OSX. Run ruby -v and it should return Ruby version 2.0.0 or higher.
 - You have Bundler installed. If not, run sudo gem install bundler.
@@ -20,9 +20,7 @@ An opinionated, rapid web prototyping stack maintained by the team at NPR.
 ```
 git clone https://github.com/npr-design/shortwave.git your-prototype
 cd your-prototype
-npm install
-bundle install
-jekyll build
+yarn install && bundle install
 gulp
 ```
 
