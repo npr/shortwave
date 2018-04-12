@@ -1,0 +1,16 @@
+---
+# Where (some of) the magic happens. Build upon this or delete it and start over! Have fun! You deserve it!!!
+---
+// Import Tachyons from node_modules: https://github.com/tachyons-css/tachyons-sass
+@import "tachyons-sass/tachyons.scss";
+
+// Add your own CSS rules here
+.system { font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif; }
+
+// We can extend Tachyons styles in new classes like so
+.card {
+  @extend .system, .f2, .green, .ma4;
+}
+
+// Full Tachyons documentation: http://tachyons.io/docs/
+// Quick reference & class generation tools: https://tachyons-tldr.now.sh

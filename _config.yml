@@ -1,0 +1,18 @@
+# Site Meta
+title: "Shortwave"
+phase: "alpha"
+version: "0.1"
+description: "Welcome to your brand new prototype. Edit this metadata in config.yml or start building your first view in index.html"
+author:
+
+# URL Stuff
+baseurl: "" # Set the baseurl to the name of your Github repo when deploying with Github Pages
+url: "" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+
+# Exclude
+exclude: [node_modules, gulpfile.js]
+
+# Allow for simpler Sass import paths in main.scss
