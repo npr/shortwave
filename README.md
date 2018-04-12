@@ -8,19 +8,17 @@ An opinionated, rapid web prototyping stack maintained by the team at NPR.
 - **gulp:** Automates the ```build``` and ```serve``` tasks so you can focus on your prototype instead of fiddling with the command line.
 - **browser-sync:** Spins up local & external access URLs for your prototype. Watches for changes and automatically reloads every instance. Comes in handy for testing across different browsers and devices at once.
 - **github pages:** Quickly deploy to Github Pages to share your prototype from your ```username.github.io``` address.
-- **custom components:** A collection of custom components for your copy/paste pleasure.
 
 ## Assumptions
 - You're on OSX. This one should be pretty easy to determine.. you're off to a great start!
 - You have the Xcode command line tools installed. Not sure? Run gcc -v and you'll be prompted to install if you don't have it already.
 - You have Ruby installed. It should come with OSX. Run ruby -v and it should return Ruby version 2.0.0 or higher.
-- You have Bundler installed. If not, run sudo gem install bundler.
 
 ## Getting Started With Shortwave
 ```
 git clone https://github.com/npr-design/shortwave.git your-prototype
 cd your-prototype
-yarn install && bundle install
+yarn install
 gulp
 ```
 
