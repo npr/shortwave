@@ -1,18 +1,54 @@
-var gulp = require('gulp');
-    shell = require('gulp-shell');
-    browserSync = require('browser-sync').create();
-    reload = browserSync.reload;
+// Write new gulp tasks in this file. Need some help? Check out the gulp.js docs: https://gulpjs.com
 
-// Task for building blog when something changed:
-gulp.task('build', shell.task(['bundle exec jekyll build --watch']));
-// Or if you don't use bundle:
-// gulp.task('build', shell.task(['jekyll build --watch']));
+// Variables
+var gulp        = require('gulp');
+    browserSync = require('browser-sync');
+    sass        = require('gulp-sass');
+    prefix      = require('gulp-autoprefixer');
+    cp          = require('child_process');
+    jekyll      = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
+    messages    = { jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build' };
 
-// Task for serving blog with Browsersync
-gulp.task('serve', function () {
-    browserSync.init({server: {baseDir: '_site/'}});
-    // Reloads page when some of the already built files changed:
-    gulp.watch('_site/**/*.*').on('change', reload);
+// Build the site
+gulp.task('build', function (done) {
+    browserSync.notify(messages.jekyllBuild);
+    return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
+        .on('close', done);
 });
 
-gulp.task('default', ['build', 'serve']);
+// Rebuild Jekyll & do page reload
+gulp.task('rebuild', ['build'], function () {
+    browserSync.reload();
+});
+
+// Wait for jekyll-build, then launch the server
+gulp.task('browser-sync', ['sass', 'build'], function() {
+    browserSync({
+        server: {
+            baseDir: '_site'
+        }
+    });
+});
+
+// Compile files from _scss into _site/css and create new directory and file css/main.css
+gulp.task('sass', function () {
+    return gulp.src('_scss/main.scss')
+        .pipe(sass({
+            includePaths: ['scss'],
+            onError: browserSync.notify
+        }))
+        .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+        .pipe(gulp.dest('_site/css'))
+        .pipe(browserSync.reload({stream:true}))
+        .pipe(gulp.dest('css'));
+});
+
+// Watch scss files for changes & recompile
+// Watch html/md files, run jekyll & reload BrowserSync
+gulp.task('watch', function () {
+    gulp.watch('_scss/*.scss', ['sass']);
+    gulp.watch(['*.html', '_layouts/*.html'], ['rebuild']);
+});
+
+// Default task, running just `gulp` will compile the sass, compile the jekyll site, launch BrowserSync & watch files.
+gulp.task('default', ['browser-sync', 'watch']);
