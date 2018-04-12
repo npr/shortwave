@@ -47,7 +47,7 @@ gulp.task('sass', function () {
 // Watch html/md files, run jekyll & reload BrowserSync
 gulp.task('watch', function () {
     gulp.watch('_scss/*.scss', ['sass']);
-    gulp.watch(['*.html', '_layouts/*.html'], ['rebuild']);
+    gulp.watch(['*.html', '_layouts/*.html', '_includes/*.html'], ['rebuild']);
 });
 
 // Default task, running just `gulp` will compile the sass, compile the jekyll site, launch BrowserSync & watch files.
