@@ -21,6 +21,7 @@ cd your-prototype
 yarn install
 gulp
 ```
+You just built your first Shortwave prototype! If you're a first timer, take some time to explore the directory structure and read the comments. If I were you, I would start by writing some markup in index.html. Have fun!
 
 ## Contributing
 Reporting a bug? File a detailed issue in the ```Issues``` tab above. If you'd like to work on an existing issue, please let us know you're picking it up by leaving a comment.
