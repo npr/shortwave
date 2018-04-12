@@ -10,7 +10,7 @@ An opinionated, rapid web prototyping stack maintained by the team at NPR.
 - **github pages:** Quickly deploy to Github Pages to share your prototype from your ```username.github.io``` address.
 
 ## Assumptions
-- You're on OSX. This one should be pretty easy to determine.. you're off to a great start!
+- You're on OSX. If you see a little picture of an apple in the upper-left corner of your screen, you're off to a great start!
 - You have the Xcode command line tools installed. Not sure? Run gcc -v and you'll be prompted to install if you don't have it already.
 - You have Ruby installed. It should come with OSX. Run ruby -v and it should return Ruby version 2.0.0 or higher.
 
