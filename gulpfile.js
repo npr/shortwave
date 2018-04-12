@@ -1,7 +1,7 @@
 var gulp = require('gulp');
-var shell = require('gulp-shell');
-var browserSync = require('browser-sync').create();
-var reload = browserSync.reload;
+    shell = require('gulp-shell');
+    browserSync = require('browser-sync').create();
+    reload = browserSync.reload;
 
 // Task for building blog when something changed:
 gulp.task('build', shell.task(['bundle exec jekyll build --watch']));
