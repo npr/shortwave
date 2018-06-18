@@ -13,4 +13,4 @@ url: "" # the base hostname & protocol for your site
 markdown: kramdown
 
 # Exclude
-exclude: [node_modules, gulpfile.js]
+exclude: [node_modules, gulpfile.js, Gemfile, Gemfile.lock, package.json, yarn.lock, README.md, .gitignore]
