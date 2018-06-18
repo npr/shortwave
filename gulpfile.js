@@ -45,7 +45,7 @@ gulp.task('browser-sync', function() {
 // Watch certain directories for changes and run sass/jekyll build tasks
 gulp.task('watch', function() {
   gulp.watch('_sass/*.scss', ['sass']);
-  gulp.watch(['_includes/*.html', '_layouts/*.html', '*.md', '_docs/*.md'], ['rebuild']);
+  gulp.watch(['_includes/*.html', '_layouts/*.html', '*.md', '*.html', '*.yml'], ['rebuild']);
 });
 
 // Reload the browser on rebuild
