@@ -1,5 +1,5 @@
 # shortwave 🌀
-An opinionated, rapid web prototyping stack maintained by the team at NPR.
+An opinionated, rapid web prototyping stack.
 
 ## Features
 - **jekyll:** A blog-aware static site generator. The backbone of Shortwave.
